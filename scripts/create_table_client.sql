@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS clients (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+    rg VARCHAR(20) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    endereco_id INTEGER REFERENCES addresses(id) ON DELETE CASCADE
+);
